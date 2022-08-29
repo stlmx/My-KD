@@ -6,7 +6,7 @@ from PIL import Image
 
 
 def get_data_folder():
-    data_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data")
+    data_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "/root/autodl-tmp")
     if not os.path.isdir(data_folder):
         os.makedirs(data_folder)
     return data_folder
@@ -147,7 +147,7 @@ def get_cifar100_dataloaders(batch_size, val_batch_size, num_workers):
     test_set = datasets.CIFAR100(
         root=data_folder, download=True, train=False, transform=test_transform
     )
-
+# dataloader的第一项是dataset吗?(train_set)
     train_loader = DataLoader(
         train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers
     )
