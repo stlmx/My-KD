@@ -4,3 +4,4 @@ tensorboard-logger
 yacs
 wandb
 pandas
+numpy
